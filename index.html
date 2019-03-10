@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>GifTastic</h1> 
+
+
+    <button data-comedians="chris rock">"A sense of humor is great - it goes a long, long way in a marriage."</button>
+    <button data-comedians="kevin hart">I DON'T have EX's! I have Y's. Like 'Y the hell did I date you?!'</button>
+    <button data-comedians="george carlin">"Inside every cynical person, there is a disappointed idealist."</button>
+    <button data-comedians="will smith">""Now, this is my brother Carlton. We can't afford new clothes, so he just doesn't grow!" "</button>
+    <div id="gifs-here">
+    </div>
+        <div id= "column-right"></div>
+
+        
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+     $("button").on("click", function() {
+        var comedians = $(this).attr("data-comedians");
+
+        var queryURL =  "https://api.giphy.com/v1/gifs/search?q=" +
+        comedians+ "&api_key=dc6zaTOxFJmzC&limit=10";
+
+        $.ajax({
+        url: queryURL,
+        method: "GET"
+        })
+
+        .then(function(response) {
+          console.log(queryURL);
+          console.log(response);
+        
+          var results = response.data;
+          for (var i = 0; i < results.length; i++) {
+
+            var comediansDiv= $("<div>");
+                var p = $("<p>").text("Rating: " + results[i].rating);
+                    var ComedianImage = $("<img>");
+            ComedianImage.attr("src", results[i].images.fixed_height.url);
+
+            comediansDiv.append(p);
+            comediansDiv.append(ComedianImage);
+            $("#gifs-here").prepend(comediansDiv);
+                }
+
+            })
+        })
+</script>
+</body>
+</html>
