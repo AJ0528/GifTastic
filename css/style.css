@@ -9,3 +9,15 @@ h1{
     font-family: cursive;
     color:goldenrod;
 }
+button{
+    font-family: fantasy;
+    color: yellowgreen;
+    font-size:18px;
+    align-content: center;
+}
+input{
+    position: relative;
+    font-display: 16px;
+    float:right;
+
+}
