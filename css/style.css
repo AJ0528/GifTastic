@@ -5,7 +5,7 @@ body {
 }
 
 h1{
-    font-size:19px;
+    font-size:16px;
     font-family: cursive;
     color:goldenrod;
 }
@@ -16,8 +16,4 @@ button{
     align-content: center;
 }
 input{
-    position: relative;
-    font-display: 16px;
-    float:right;
-
 }
