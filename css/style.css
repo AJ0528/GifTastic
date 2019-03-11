@@ -1,0 +1,11 @@
+body {
+    background-image: url("https://cdn.dribbble.com/users/1703972/screenshots/3733137/space_shuttle.gif");
+    background-repeat: repeat;
+    
+}
+
+h1{
+    font-size:19px;
+    font-family: cursive;
+    color:goldenrod;
+}
